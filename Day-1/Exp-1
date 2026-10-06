@@ -1,0 +1,16 @@
+cat("Name: Parveen\n")
+cat("Register Number: 192325150\n")
+cat("Course: CSA1604-DWDM\n\n")
+
+freq <- c(200,450,300,1500,700,44)
+cf <- cumsum(freq)
+N <- sum(freq)
+i <- which(cf >= N/2)[1]
+L <- c(1,5,15,20,50,80)[i]
+f <- freq[i]
+CF <- ifelse(i == 1, 0, cf[i-1])
+h <- c(4,10,5,30,30,30)[i]
+
+median <- L + ((N/2-CF)/f)*h
+
+cat("Approximate Median =", median)
