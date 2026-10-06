@@ -1,12 +1,21 @@
 age <- c(23,23,27,27,39,41,47,49,50,52,54,54,56,57,58,58,60,61)
 
 x <- 35
+
 min_age <- min(age)
 max_age <- max(age)
+mean_age <- mean(age)
+sd_age <- 12.94
 
-result <- (x - min_age) / (max_age - min_age)
+min_max <- (x - min_age) / (max_age - min_age)
+z_score <- (x - mean_age) / sd_age
+j <- ceiling(log10(max(abs(age)) + 1))
+decimal_scaling <- x / (10^j)
 
 cat("Name = Parveen\n")
 cat("Register Number = 192325150\n")
 cat("Course = CSA1604-DWDM\n\n")
-cat("Min-Max Normalization of 35 =", result, "\n")
+
+cat("Min-Max Normalization =", min_max, "\n")
+cat("Z-Score Normalization =", z_score, "\n")
+cat("Decimal Scaling Normalization =", decimal_scaling, "\n")
