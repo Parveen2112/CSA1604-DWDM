@@ -1,0 +1,14 @@
+pencils <- c(9,25,23,12,11,6,7,8,9,10)
+
+mode <- function(x) {
+  u <- unique(x)
+  u[which(tabulate(match(x,u)) == max(tabulate(match(x,u))))]
+}
+
+cat("Name = Parveen\n")
+cat("Register Number = 192325150\n")
+cat("Course = CSA1604-DWDM\n\n")
+
+cat("Mean =", mean(pencils), "\n")
+cat("Median =", median(pencils), "\n")
+cat("Mode =", mode(pencils), "\n")
