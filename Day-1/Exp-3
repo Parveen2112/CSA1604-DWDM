@@ -1,0 +1,14 @@
+cat("Name: Parveen\n")
+cat("Register Number: 192325150\n")
+cat("Course: CSA1604-DWDM\n\n")
+
+x <- c(200,300,400,600,1000)
+
+minmax <- (x-min(x))/(max(x)-min(x))
+z <- (x-mean(x))/sqrt(mean((x-mean(x))^2))
+
+cat("Min-Max Normalization:\n")
+print(minmax)
+
+cat("\nZ-Score Normalization:\n")
+print(z)
