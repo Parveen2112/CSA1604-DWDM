@@ -1,0 +1,26 @@
+url <- "https://vincentarelbundock.github.io/Rdatasets/csv/HSAUR/water.csv"
+
+water <- read.csv(url)
+
+cat("Name = Parveen\n")
+cat("Register Number = 192325150\n")
+cat("Course = CSA1604-DWDM\n\n")
+
+model <- lm(mortality ~ hardness, data = water)
+
+cat("Correlation =", cor(water$hardness, water$mortality), "\n\n")
+
+cat("Linear Regression Model:\n")
+print(model)
+
+prediction <- predict(model, newdata = data.frame(hardness = 88))
+
+cat("\nPredicted Mortality for Hardness = 88:", prediction, "\n")
+
+plot(water$hardness, water$mortality,
+     main = "Water Hardness vs Mortality",
+     xlab = "Water Hardness",
+     ylab = "Mortality",
+     pch = 19)
+
+abline(model)
