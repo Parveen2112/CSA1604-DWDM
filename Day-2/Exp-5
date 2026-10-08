@@ -4,11 +4,11 @@ cat("Name = Parveen\n")
 cat("Register Number = 192325150\n")
 cat("Course = CSA1604-DWDM\n\n")
 
-cat("AirPassengers Histogram\n")
-
 hist(data,
-     breaks=c(100,200,350,500,650,800),
-     xlim=c(100,800),
-     main="Histogram of AirPassengers",
-     xlab="Number of Passengers",
-     ylab="Frequency")
+     breaks = c(100, 200, 350, 500, 650, 800),
+     xlim = c(100, 800),
+     main = "Histogram of AirPassengers",
+     xlab = "Number of Passengers",
+     ylab = "Frequency",
+     col = "lightblue",
+     border = "black")
