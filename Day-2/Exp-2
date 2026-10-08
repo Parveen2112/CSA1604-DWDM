@@ -1,0 +1,41 @@
+data <- c(18,18,18,20,20,20,20,20,20,20,21,21,21,21,25,25,25,25,25,28,28,30,30,30)
+
+data <- sort(data)
+
+bin1 <- data[1:8]
+bin2 <- data[9:16]
+bin3 <- data[17:24]
+
+mean1 <- mean(bin1)
+mean2 <- mean(bin2)
+mean3 <- mean(bin3)
+
+smooth_mean <- c(rep(mean1,8),rep(mean2,8),rep(mean3,8))
+
+smooth_boundary <- c(
+  ifelse(abs(bin1-min(bin1)) <= abs(bin1-max(bin1)),min(bin1),max(bin1)),
+  ifelse(abs(bin2-min(bin2)) <= abs(bin2-max(bin2)),min(bin2),max(bin2)),
+  ifelse(abs(bin3-min(bin3)) <= abs(bin3-max(bin3)),min(bin3),max(bin3))
+)
+
+cat("Name = Parveen\n")
+cat("Register Number = 192325150\n")
+cat("Course = CSA1604-DWDM\n\n")
+
+cat("Bin 1 =", bin1, "\n")
+cat("Bin 2 =", bin2, "\n")
+cat("Bin 3 =", bin3, "\n\n")
+
+cat("Bin Means =", mean1, mean2, mean3, "\n\n")
+
+cat("Smoothing by Bin Means:\n")
+print(smooth_mean)
+
+cat("\nSmoothing by Bin Boundaries:\n")
+print(smooth_boundary)
+
+hist(data,
+     breaks=3,
+     main="Histogram of Equal-Frequency Bins",
+     xlab="Values",
+     ylab="Frequency")
