@@ -1,0 +1,19 @@
+A <- c(18,2,20)
+B <- c(22,28,10)
+C <- c(20,40,40)
+
+data <- data.frame(A,B,C)
+
+cat("Name = Parveen\n")
+cat("Register Number = 192325150\n")
+cat("Course = CSA1604-DWDM\n\n")
+
+cat("Sample Covariance between B and C =", cov(B,C), "\n\n")
+
+cat("Sample Covariance Matrix:\n")
+print(cov(data))
+
+cat("\nSample Correlation between B and C =", cor(B,C), "\n\n")
+
+cat("Sample Correlation Matrix:\n")
+print(cor(data))
