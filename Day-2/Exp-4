@@ -1,0 +1,22 @@
+data <- c(200,300,400,600,1000)
+
+min_value <- min(data)
+max_value <- max(data)
+
+min_max <- (data-min_value)/(max_value-min_value)
+
+z_score <- (data-mean(data))/sd(data)
+
+example <- (80000-50000)/(100000-50000)
+
+cat("Name = Parveen\n")
+cat("Register Number = 192325150\n")
+cat("Course = CSA1604-DWDM\n\n")
+
+cat("Min-Max Normalization of 80000 =", example, "\n\n")
+
+cat("Min-Max Normalization:\n")
+print(min_max)
+
+cat("\nZ-Score Normalization:\n")
+print(z_score)
