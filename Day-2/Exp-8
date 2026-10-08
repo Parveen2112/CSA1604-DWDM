@@ -1,0 +1,11 @@
+data <- mtcars
+
+cat("Name = Parveen\n")
+cat("Register Number = 192325150\n")
+cat("Course = CSA1604-DWDM\n\n")
+
+boxplot(mpg ~ cyl,
+        data=data,
+        main="MPG by Number of Cylinders",
+        xlab="Number of Cylinders",
+        ylab="Miles Per Gallon")
