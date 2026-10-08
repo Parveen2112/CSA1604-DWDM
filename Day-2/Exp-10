@@ -1,0 +1,26 @@
+data <- read.csv("https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv",
+                 header = FALSE)
+
+colnames(data) <- c("Pregnancies","Glucose","BloodPressure","SkinThickness",
+                    "Insulin","BMI","DiabetesPedigreeFunction","Age","Outcome")
+
+cat("Name = Parveen\n")
+cat("Register Number = 192325150\n")
+cat("Course = CSA1604-DWDM\n\n")
+
+cat("Diabetes Dataset\n\n")
+
+cat("Correlation between Age and Blood Pressure =",
+    cor(data$Age, data$BloodPressure), "\n")
+
+plot(data$Age, data$BloodPressure,
+     main = "Age vs Blood Pressure",
+     xlab = "Age",
+     ylab = "Blood Pressure",
+     pch = 19)
+
+barplot(tapply(data$BloodPressure, data$Age, mean),
+        main = "Average Blood Pressure by Age",
+        xlab = "Age",
+        ylab = "Average Blood Pressure",
+        las = 2)
