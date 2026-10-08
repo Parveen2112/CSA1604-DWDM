@@ -1,0 +1,20 @@
+data <- mtcars
+
+cat("Name = Parveen\n")
+cat("Register Number = 192325150\n")
+cat("Course = CSA1604-DWDM\n\n")
+
+plot(data$mpg,
+     type="o",
+     xlab="Car Index",
+     ylab="Values",
+     main="MPG and QSEC",
+     ylim=range(c(data$mpg,data$qsec)))
+
+lines(data$qsec,
+      type="o")
+
+legend("topright",
+       legend=c("mpg","qsec"),
+       lty=1,
+       pch=1)
